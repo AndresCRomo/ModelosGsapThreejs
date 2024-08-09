@@ -1,7 +1,62 @@
+import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+const renderer = new THREE.WebGLRenderer();
+camera.position.z = 5;
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+
+const ambientlight = new THREE.AmbientLight(0xffffff, 1);
+scene.add(ambientlight);
+
+
+
+const AxesHelper = new THREE.AxesHelper(5);
+scene.add(AxesHelper);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.update();
+
+
+
+const loader = new GLTFLoader();
+loader.load("src/assets/3dmodels/hiphop/album-Hiphop.gltf", (gltf) => {
+  const model = gltf.scene;
+  model.scale.set(30, 30, 30);
+  
+
+
+  scene.add(model);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    renderer.render(scene, camera);
+  }
+  animate();
+}, undefined, (error) => {
+  console.error("Error al Cargar el modelo:",error);
+});
+
+window.addEventListener("resize", () => {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+  renderer.setSize(width, height);
+});
+/*
+
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
@@ -68,7 +123,7 @@ loader.load(
     disc.scale.set(50, 50, 50);
     disc.rotation.set(0, 1.2, Math.PI / 2);
 
-    /*disc.traverse(node=>{
+    disc.traverse(node=>{
     if(node.isMesh){
       node.material.map=baseTexture;
       node.material.normalMap=normalTexture;
@@ -76,7 +131,7 @@ loader.load(
       node.material.metalnessMap= metalTexture;
       
     } 
-  })*/
+  })
     scene.add(disc);
     animate();
     animateDisc();
@@ -113,5 +168,15 @@ function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 }
-animate();
-createRoot(document.getElementById("root")).render(<StrictMode></StrictMode>);
+animate();*/
+
+
+
+createRoot(document.getElementById("root")).render(
+
+  <React.StrictMode>
+    <BrowserRouter>
+      
+    </BrowserRouter>
+  </React.StrictMode>,
+);

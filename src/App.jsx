@@ -1,12 +1,18 @@
 
 import './App.css'
 import Carrusel from './models/Carrusel'
+import { Route, Routes } from "react-router-dom";
+
 function App() {
   
 
   return (
     <div className='w-full h-screen items-center flex justify-center '>
-      <Carrusel/>
+      <Routes>
+        <Route path="/" element={<Carrusel />} />
+      </Routes>
+      
+      
 
     </div>
   )

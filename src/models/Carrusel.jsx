@@ -1,38 +1,21 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { useRef,useState } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
-gsap.registerPlugin(useGSAP);
+
+
 
 
 function Carrusel() {
     
 
-    
-
-    const disco = useRef();
-    const [toggle, setToggle] = useState(0);
-
-    useGSAP(
-        () => {
-            
-            gsap.to(disco.current, {rotate: toggle, duration: .5, ease: 'none'});
-             // <-- automatically reverted
-        },
-        
-    [toggle]); // <-- scope
 
         
     return (
         <div className="w-full overflow-clip relative flex justify-center items-center h-[400px] border-2 border-purple-300">
             
-                <button onClick={()=> setToggle(toggle + 45)}  className='rounded-full bg-slate-500 font-medium text-white'>toggle</button>
-                <div ref={disco} className=' disco absolute   left-[230px] size-[420px]  rounded-full flex items-center justify-center  border-[2px]'
+                <button  className='rounded-full bg-slate-500 font-medium text-white'>toggle</button>
+                <div  className=' disco absolute   left-[230px] size-[420px]  rounded-full flex items-center justify-center  border-[2px]'
                 style={{
                     background: "radial-gradient(circle, #0c0c0c ,#2e2e2e )",
                 }}
