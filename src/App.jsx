@@ -1,20 +1,22 @@
 
 import './App.css'
-import Carrusel from './models/Carrusel'
+import Carrusel from './components/Carrusel'
+import Home from './Pages/Home';
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   
 
   return (
-    <div className='w-full h-screen items-center flex justify-center '>
+    <main className='w-full h-screen '>
       <Routes>
-        <Route path="/" element={<Carrusel />} />
+        <Route path="/" element={<Home />} />
+
       </Routes>
       
       
 
-    </div>
+    </main>
   )
 }
 
