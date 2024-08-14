@@ -1,10 +1,10 @@
-import React from 'react'
+
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Carrusel from '../components/Carrusel'
 const Home = () => {
     return (
-        <div className='bg-black w-full h-full flex flex-col '>
+        <div className='bg-black w-full h-screen flex flex-col '>
             <div className='absolute  top-0 z-20 w-full'>
                 <Navbar/>
             </div>
