@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import vinil from'../assets/VinylRecords/vinilo.png'
 import album1 from '../assets/VinylRecords/VINYL-RECORD-HIPHOP.png'
 import album2 from '../assets/VinylRecords/VINYL-RECORD-CHAIRDANCE.png'
@@ -15,7 +15,8 @@ import album9 from '../assets/VinylRecords/VINYL-RECORD-RITMOSLATINOS.png'
 import album10 from '../assets/VinylRecords/VINYL-RECORD-TWERK.png'
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
-import { render } from "@react-three/fiber";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 function Carrusel() {
 
     const [buttonUpDisabled, setButtonUpDisabled] = useState(false);
@@ -36,6 +37,7 @@ function Carrusel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [rotation, setRotation] = useState(-90);
     const [rotation2, setRotation2] = useState(90);
+
     const handleNext = () => {
         setButtonDownDisabled(true);
         setRotation(rotation - 90)
@@ -47,7 +49,7 @@ function Carrusel() {
         duration: 1,
         y: -200,
         x: -100,
-        scale: 3,
+        
         opacity: 0,
         onComplete: () => {
             const nextIndex = (currentIndex + 1) % albums.length;
@@ -55,13 +57,13 @@ function Carrusel() {
             gsap.fromTo(
                 `#album${nextIndex}`,
                 {
-                    scale: 3,
+                    
                     y: 200,
                     x: -100,
                     opacity: 0,
                 },
                 {
-                    scale: 13,
+                    
                     duration: 1,
                     y: 0,
                     x: 0,
@@ -86,7 +88,7 @@ function Carrusel() {
             duration: 1,
             y: 200,
             x: -100,
-            scale: 3,
+            
             opacity: 0,
             onComplete: () => {
                 const prevIndex = (currentIndex - 1 + albums.length) % albums.length;
@@ -94,13 +96,13 @@ function Carrusel() {
                 gsap.fromTo(
                     `#album${prevIndex}`,
                     {
-                        scale: 3,
+                        
                         y: -200,
                         x: -100,
                         opacity: 0,
                     },
                     {
-                        scale: 13,
+                        
                         duration: 1,
                         y: 0,
                         x: 0,
@@ -113,50 +115,48 @@ function Carrusel() {
             },
         });
     };
-
-    useEffect(() => {
-        console.log(currentIndex);
-    }, [currentIndex]);
-
     useGSAP(() => {
-        gsap.to("#heading", { opacity: 1, delay: 1.5, y: -30 });
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to("#heading", { scrollTrigger:"#heading", opacity: 1, delay: 0.5, y:-20 });
+        gsap.to("#carusel", { scrollTrigger:"#carusel", opacity: 1, delay: 1, y:-20 });
     });
 
     return (
         <div className="w-full h-full flex flex-col justify-center items-center ">
         <h1
             id="heading"
-            className=" opacity-0 font-raleway text-white font-bold text-[18px] "
+            className=" opacity-0 font-raleway text-white font-bold text-[18px] md:text-[24px] lg:text-[30px] "
         >
             Conoce Nuestras Clases
         </h1>
 
-        <div className="flex w-full h-[300px] bg-[#0c0c0c] justify-center items-center overflow-clip ">
+        <div id="carusel" className="opacity-0 flex w-full h-[300px] md:h-[500px] lg:h-[700px] bg-[#0e0e0e] justify-center items-center overflow-clip ">
             <div className=" w-full h-full relative flex items-center justify-center">
+                
                 <div className="w-full h-10 bg-gradient-to-b from-black absolute top-0"></div>
                 <div className="w-full h-10 bg-gradient-to-t from-black absolute bottom-0"></div>
             <button
                 disabled={buttonUpDisabled}
                 onClick={handlePrev}
-                className="size-[50px] z-20   absolute top-[8px] right-[150px] flex items-center justify-center"
+                className="size-[50px] z-20   absolute top-[8px] md:top-[70px] lg:top-[100px] right-[150px] md:right-[350px] lg:right-[580px] flex items-center justify-center"
             >
-                <FaChevronUp className="text-white text-lg" />
+                <FaChevronUp className="text-white text-lg md:text-xl lg:text-2xl" />
             </button>
             <button
                 disabled={buttonDownDisabled}
                 onClick={handleNext}
-                className="size-[50px] z-20  absolute bottom-[10px] right-[150px] flex items-center justify-center"
+                className="size-[50px] z-20  absolute bottom-[10px] md:bottom-[70px] lg:bottom-[100px] right-[150px] md:right-[350px] lg:right-[580px] flex items-center justify-center"
             >
-                <FaChevronDown className="text-white text-lg" />
+                <FaChevronDown className="text-white text-lg md:text-xl lg:text-2xl" />
             </button>
             <div className="circle size-[400px] rounded-full absolute -top-[50px] -left-[170px] flex justify-center items-center ">
                 {albums.map((album, index) => (
                 <div
                     key={index}
                     id={`album${index}`}
-                    className={`absolute size-[20px] transform scale-[13] ${
+                    className={`absolute size-[20px] transform scale-[13] md:scale-[20] lg:scale-[26] ${
                     index === currentIndex
-                        ? " top-[180px] -right-[35px]"
+                        ? " top-[180px] md:top-[280px] lg:top-[377.4px] -right-[35px] md:-right-[250px] lg:-right-[500px] "
                         : "opacity-0 top-[180px] -right-[35px]"
                     }`}
                 >
@@ -170,7 +170,7 @@ function Carrusel() {
             </div>
             <img
                 id="disco"
-                className="lg:size-[400px] size-[200px] object-cover absolute -left-[102px] top-[50px] lg:-left-[200px] "
+                className="lg:size-[600px] md:size-[380px] size-[200px] object-cover absolute -left-[102px] md:-left-[177px] lg:-left-[300px] top-[50px] md:top-[60px] lg:top-[50px] "
                 src={vinil}
                 alt=""
             />
