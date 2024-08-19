@@ -130,53 +130,59 @@ function Carrusel() {
             Conoce Nuestras Clases
         </h1>
 
-        <div id="carusel" className="opacity-0 flex w-full h-[300px] md:h-[500px] lg:h-[700px] bg-[#0e0e0e] justify-center items-center overflow-clip ">
+        <div id="carusel" className="opacity-0 flex w-full h-[300px] md:h-[500px] lg:h-[700px] xl:h-[800px] bg-[#0e0e0e] justify-center items-center overflow-clip ">
             <div className=" w-full h-full relative flex items-center justify-center">
-                
-                <div className="w-full h-10 bg-gradient-to-b from-black absolute top-0"></div>
-                <div className="w-full h-10 bg-gradient-to-t from-black absolute bottom-0"></div>
-            <button
-                disabled={buttonUpDisabled}
-                onClick={handlePrev}
-                className="size-[50px] z-20   absolute top-[8px] md:top-[70px] lg:top-[100px] right-[150px] md:right-[350px] lg:right-[580px] flex items-center justify-center"
-            >
-                <FaChevronUp className="text-white text-lg md:text-xl lg:text-2xl" />
-            </button>
-            <button
-                disabled={buttonDownDisabled}
-                onClick={handleNext}
-                className="size-[50px] z-20  absolute bottom-[10px] md:bottom-[70px] lg:bottom-[100px] right-[150px] md:right-[350px] lg:right-[580px] flex items-center justify-center"
-            >
-                <FaChevronDown className="text-white text-lg md:text-xl lg:text-2xl" />
-            </button>
-            <div className="circle size-[400px] rounded-full absolute -top-[50px] -left-[170px] flex justify-center items-center ">
-                {albums.map((album, index) => (
-                <div
-                    key={index}
-                    id={`album${index}`}
-                    className={`absolute size-[20px] transform scale-[13] md:scale-[20] lg:scale-[26] ${
-                    index === currentIndex
-                        ? " top-[180px] md:top-[280px] lg:top-[377.4px] -right-[35px] md:-right-[250px] lg:-right-[500px] "
-                        : "opacity-0 top-[180px] -right-[35px]"
-                    }`}
-                >
-                    <img
-                    className="w-full h-full object-cover"
-                    src={album.img}
-                    alt={`Album ${index + 1}`}
-                    />
+                <div className="relative w-full h-full  flex justify-center items-center">
+                    <button
+                        disabled={buttonUpDisabled}
+                        onClick={handlePrev}
+                        className="w-full z-20   absolute top-[8px] md:top-[70px] lg:top-[100px] right-[0px] flex items-center justify-center"
+                    >
+                        <FaChevronUp className="text-white text-lg md:text-xl lg:text-2xl" />
+                    </button>
+                    <button
+                        disabled={buttonDownDisabled}
+                        onClick={handleNext}
+                        className="w-full z-20  absolute bottom-[10px] md:bottom-[70px] lg:bottom-[100px] right-0 flex items-center justify-center"
+                    >
+                        <FaChevronDown className="text-white text-lg md:text-xl lg:text-2xl" />
+                    </button>
+
+                    <div className="circle  w-[200px] h-full   flex justify-center items-center ">
+                        
+
+                        {albums.map((album, index) => (
+                            <div
+                            key={index}
+                            id={`album${index}`}
+                            className={` absolute -top-[5px] md:top-4 lg:top-10 md:ml-20   ${
+                                index === currentIndex
+                                ? "w-[400px] md:w-[600px] lg:w-[800px] xl:w-[950px] "
+                                : "opacity-0 "
+                            }`}
+                            >
+                            <img
+                            className="object-cover w-full h-full"
+                            src={album.img}
+                            alt={`Album ${index + 1}`}
+                            />
+                        </div>
+                        ))}
+                        
+                    </div>
                 </div>
-                ))}
-            </div>
-            <img
-                id="disco"
-                className="lg:size-[600px] md:size-[380px] size-[200px] object-cover absolute -left-[102px] md:-left-[177px] lg:-left-[300px] top-[50px] md:top-[60px] lg:top-[50px] "
-                src={vinil}
-                alt=""
-            />
+                    
+                    <div className="w-full h-10 bg-gradient-to-b from-black absolute top-0"></div>
+                    <div className="w-full h-10 bg-gradient-to-t from-black absolute bottom-0"></div>
+                <img
+                    id="disco"
+                    className="size-[200px] md:size-[380px] lg:size-[600px] xl:size-[700px]  object-cover absolute -left-[102px] md:-left-[177px] lg:-left-[300px] xl:-left-[350px] top-[50px] md:top-[60px] lg:top-[50px]  "
+                    src={vinil}
+                    alt=""
+                />
             </div>
         </div>
-        </div>
+    </div>
     );
 }
 
