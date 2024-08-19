@@ -4,6 +4,7 @@ import Carrusel from "../components/Carrusel";
 import { Footer } from "../components/Footer";
 import { useDisclosure } from "@nextui-org/react";
 import { ReservaTuClase } from "../components/ReservaTuClase";
+import { ContactUs } from "../components/ContactUs";
 
 const Home = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -21,6 +22,9 @@ const Home = () => {
         </div>
         <div>
           <Carrusel />
+        </div>
+        <div>
+          <ContactUs />
         </div>
       </div>
       <footer className="mt-auto">
