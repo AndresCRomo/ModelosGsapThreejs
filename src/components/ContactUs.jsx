@@ -5,7 +5,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 export const ContactUs = () => {
   return (
     <div>
-      <div className="flex flex-col justify-center items-center w-full">
+     {/* <div className="flex flex-col justify-center items-center w-full">
         <div className="">
           <h1 className="font-raleway text-white font-bold text-[18px] md:text-[24px] lg:text-[30px] text-center">
             Contactanos
@@ -73,7 +73,7 @@ export const ContactUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
       <div>
         <div className="flex flex-col justify-center items-center w-full">
           <h1 className="font-raleway text-white font-bold text-[18px] md:text-[24px] lg:text-[30px] text-center mb-2 mt-2">
