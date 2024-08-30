@@ -1,4 +1,3 @@
-import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import { FaClock } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -20,9 +19,9 @@ export const ContactUs = () => {
                 width="600"
                 height="450"
                 style={{ border: "0", margin: "auto" }}
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
             <div>
@@ -86,9 +85,9 @@ export const ContactUs = () => {
             <iframe
               width="98%"
               height="100%"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
+              frameBorder="0"
+              marginHeight="0"
+              marginWidth="0"
               title="map"
               scrolling="no"
               style={{margin: "auto"}}
