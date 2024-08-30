@@ -5,12 +5,13 @@ import { Footer } from "../components/Footer";
 import { useDisclosure } from "@nextui-org/react";
 import { ReservaTuClase } from "../components/ReservaTuClase";
 import { ContactUs } from "../components/ContactUs";
+import SwipeCard from "../components/SwipeCard";
 
 const Home = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <div className="bg-black w-full min-h-screen flex flex-col">
+    <div className="bg-black w-full min-h-screen flex flex-col overflow-x-hidden">
       <ReservaTuClase isOpen={isOpen} onOpenChange={onOpenChange} />
       <div className="absolute top-0 z-20 w-full">
         <Navbar onOpen={onOpen} />
@@ -21,7 +22,7 @@ const Home = () => {
           <div className="absolute top-[228px] md:top-[330px] lg:top-[450px] xl:top-[550px] w-full lg:h-[150px] h-[73px] bg-gradient-to-t from-black z-10"></div>
         </div>
         <div>
-          <Carrusel />
+          <SwipeCard/>
         </div>
         <div>
           <ContactUs />
