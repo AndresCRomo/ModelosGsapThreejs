@@ -6,6 +6,7 @@ import { useDisclosure } from "@nextui-org/react";
 import { ReservaTuClase } from "../components/ReservaTuClase";
 import { ContactUs } from "../components/ContactUs";
 import SwipeCard from "../components/SwipeCard";
+import Eventos from "../components/Eventos";
 
 const Home = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -18,11 +19,12 @@ const Home = () => {
       </div>
       <div className="flex-grow flex flex-col gap-3">
         <div className="xl:h-[750px] lg:h-[650px] md:h-[450px] h-[350px] relative">
-          <Hero onOpen={onOpen}/>
+          <Hero onOpen={onOpen} />
           <div className="absolute top-[228px] md:top-[330px] lg:top-[450px] xl:top-[550px] w-full lg:h-[150px] h-[73px] bg-gradient-to-t from-black z-10"></div>
         </div>
+        <Eventos></Eventos>
         <div>
-          <SwipeCard/>
+          <SwipeCard />
         </div>
         <div>
           <ContactUs />
