@@ -37,7 +37,7 @@ export const Footer = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="#" className="hover:underline decoration-primary ">
+                <a href="#" target="" className="hover:underline decoration-primary ">
                   Facebook
                 </a>
               </li>
@@ -54,13 +54,8 @@ export const Footer = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="#" className="hover:underline decoration-primary">
-                  Politicas de privacidad
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline decoration-primary">
-                  Terminos y condiciones
+                <a href="https://estudio5678.com/Normas%20de%20convivencia.PDF.pdf" target="_blank" className="hover:underline decoration-primary">
+                  Normas de convivencia
                 </a>
               </li>
             </ul>

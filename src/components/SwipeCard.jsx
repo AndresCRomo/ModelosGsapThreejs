@@ -273,11 +273,11 @@ function SwipeCard() {
                 <div id="carusel" className="opacity-0 flex w-full h-[300px] md:h-[500px] lg:h-[500px] xl:h-[800px]  justify-center items-center overflow-clip">
                     <div className="w-full h-full relative flex items-center justify-center">
                         <div className=" w-full  h-full gap-[0px] flex flex-row justify-evenly items-center">
-                            <div className="flex flex-col gap-y-[100px] md:gap-[170px]  lg:gap-[190px] w-full items-center justify-between">
+                            <div className="flex flex-col gap-[100px] md:gap-[170px]  lg:gap-[190px] xl:gap-[260px] w-full items-center justify-between">
                                 <button
                                     disabled={buttonUpDisabled}
                                     onClick={handlePrev}
-                                    className=" z-30  flex items-center justify-center "
+                                    className=" z-30   flex items-center justify-center "
                                 >
                                     <FaChevronUp className="text-white text-lg md:text-xl lg:text-2xl" />
                                 </button>
@@ -288,7 +288,7 @@ function SwipeCard() {
                                         <div
                                             key={index}
                                             id={`album${index}`}
-                                            className={`size-[180px] md:size-[280px] lg:size-[340px] xl:size-[400px] absolute  top-[60px] overflow-clip md:top-[105px] lg:top-[80px] ${
+                                            className={`size-[180px] md:size-[280px] lg:size-[340px] xl:size-[400px] absolute  top-[60px] overflow-clip md:top-[105px] lg:top-[80px] xl:top-[160px] ${
                                                 index === currentIndex ? " opacity-100" : "opacity-0"
                                             }`}
                                         >
