@@ -10,41 +10,39 @@ const Hero = (props) => {
     gsap.to("#video", { opacity: 1, delay: 0.5 });
   });
 
-  
   return (
     <section className="w-full h-full flex flex-row justify-around items-center   ">
-        <div
+      <div
         id="hero"
-        className=" flex ml-10 items-center justify-center size-[130px] lg:size-[300px] md:size-[200px] z-10 opacity-0">
-            <img src={logo} alt="logo" className="object-cover " />
-        </div>
+        className=" flex ml-10 items-center justify-center size-[130px] lg:size-[300px] md:size-[200px] z-10 opacity-0"
+      >
+        <img src={logo} alt="logo" className="object-cover " />
+      </div>
       <div className="   w-full flex items-center flex-col  ">
-      
         <div className=" rounded-t-xl h-[240px]  justify-center  z-10 flex flex-col">
-          <div className="flex flex-row ">
-            
+          <div className="flex flex-row gap-2 ">
             <p
               id="hero"
-              className="  leading-none font-raleway text-white text-[40px] md:text-[60px] lg:text-[80px] xl:text-[120px] font-extrabold opacity-0 "
+              className="  leading-none line-clamp-1 font-raleway text-white text-[30px] md:text-[60px] lg:text-[80px] xl:text-[110px] font-extrabold opacity-0 "
             >
               Aprende a{" "}
             </p>
             <p
               id="hero"
-              className="  leading-none font-raleway text-white text-[40px] md:text-[60px] lg:text-[80px] xl:text-[120px] decoration-primary underline-offset-2  underline  font-extrabold opacity-0 ml-3"
+              className="  leading-none font-raleway text-white text-[30px] md:text-[60px] lg:text-[80px] xl:text-[120px] decoration-primary underline-offset-2  underline  font-extrabold opacity-0 ml-3"
             >
               Bailar{" "}
             </p>
             <p
               id="hero"
-              className="  leading-none font-raleway text-white text-[40px] md:text-[60px] lg:text-[80px] xl:text-[120px] font-extrabold opacity-0 "
+              className="  leading-none font-raleway text-white text-[30px] md:text-[60px] lg:text-[80px] xl:text-[120px] font-extrabold opacity-0 "
             >
               ,
             </p>
           </div>
           <p
             id="hero"
-            className=" leading-none font-raleway text-white text-[40px] md:text-[60px] lg:text-[80px] xl:text-[120px] font-extrabold opacity-0 "
+            className=" leading-none font-raleway text-white text-[30px] md:text-[60px] lg:text-[80px] xl:text-[120px] font-extrabold opacity-0 "
           >
             Con Estilo
           </p>
@@ -61,7 +59,7 @@ const Hero = (props) => {
         id="video"
         className=" xl:h-[700px] lg:h-[600px] md:h-[400px] h-[300px]  opacity-0  w-full object-cover pointer-events-none absolute top-0 z-0"
         src={video2}
-        autoplay="true"
+        autoPlay={true}
         muted
         loop
         playsInline

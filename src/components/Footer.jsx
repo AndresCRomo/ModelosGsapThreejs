@@ -5,6 +5,13 @@ import { RiInstagramFill } from "react-icons/ri";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 export const Footer = () => {
+  const handleMenuItemClick = (id) => {
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="w-full px-16 my-10">
       <div className="flex flex-wrap gap-10">
@@ -20,12 +27,18 @@ export const Footer = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="#" className="hover:underline decoration-primary">
+                <a
+                  onClick={() => handleMenuItemClick("eventos")}
+                  className="hover:underline decoration-primary cursor-pointer"
+                >
                   Eventos y talleres
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline decoration-primary">
+                <a
+                  onClick={() => handleMenuItemClick("clases")}
+                  className="hover:underline decoration-primary cursor-pointer"
+                >
                   Clases y maestros
                 </a>
               </li>
@@ -37,13 +50,21 @@ export const Footer = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="#" target="" className="hover:underline decoration-primary ">
+                <a
+                  href="https://www.facebook.com/people/5678-Estudio-de-danza/61550690288567/"
+                  target="_blank"
+                  className="hover:underline decoration-primary "
+                >
                   Facebook
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline decoration-primary">
-                  Whatsapp
+                <a
+                  href="https://www.instagram.com/estudio_5678/"
+                  target="_blank"
+                  className="hover:underline decoration-primary"
+                >
+                  Instagram
                 </a>
               </li>
             </ul>
@@ -54,7 +75,11 @@ export const Footer = () => {
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="https://estudio5678.com/Normas%20de%20convivencia.PDF.pdf" target="_blank" className="hover:underline decoration-primary">
+                <a
+                  href="https://estudio5678.com/Normas%20de%20convivencia.PDF.pdf"
+                  target="_blank"
+                  className="hover:underline decoration-primary"
+                >
                   Normas de convivencia
                 </a>
               </li>
@@ -65,29 +90,32 @@ export const Footer = () => {
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
         <span className="flex gap-3 text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          ©2024 <a className="hover:underline decoration-primary">Estudio 5678</a>
+          ©2024{" "}
+          <a className="hover:underline decoration-primary">Estudio 5678</a>
           Todos los derechos reservados.
-            
         </span>
         <div className="flex mt-4 sm:justify-center sm:mt-0 gap-6">
           <a
             id="whatsap"
             className="p-2 text-[20px] lg:text-[28px] text-white hover:bg-primary  hover:text-secondary rounded-full transition-all ease-in-out"
-            href=""
+            href="https://wa.me/4495484212"
+            target="_blank"
           >
             <IoLogoWhatsapp />
           </a>
           <a
             id="instagram"
             className="p-2 text-[20px] lg:text-[28px] text-white hover:bg-primary  hover:text-secondary rounded-full transition-all ease-in-out"
-            href=""
+            href="https://www.instagram.com/estudio_5678/"
+            target="_blank"
           >
             <RiInstagramFill />
           </a>
           <a
             id="facebook"
             className="p-2 text-[20px] lg:text-[26px] text-white hover:bg-primary  hover:text-secondary rounded-full transition-all ease-in-out"
-            href=""
+            href="https://www.facebook.com/people/5678-Estudio-de-danza/61550690288567/"
+            target="_blank"
           >
             <BsFacebook />
           </a>

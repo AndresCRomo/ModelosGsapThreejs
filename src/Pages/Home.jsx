@@ -22,8 +22,10 @@ const Home = () => {
           <Hero onOpen={onOpen} />
           <div className="absolute top-[228px] md:top-[330px] lg:top-[450px] xl:top-[550px] w-full lg:h-[150px] h-[73px] bg-gradient-to-t from-black z-10"></div>
         </div>
-        <Eventos></Eventos>
-        <div>
+        <div id="eventos">
+          <Eventos></Eventos>
+        </div>
+        <div id="clases">
           <SwipeCard />
         </div>
         <div>

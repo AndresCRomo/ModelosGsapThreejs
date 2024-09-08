@@ -16,6 +16,14 @@ function Navbar(props) {
   useGSAP(() => {
     gsap.to(".Header", { opacity: 1, delay: 0.3 });
   });
+
+  const handleMenuItemClick = (id) => {
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="Header fixed top-0 opacity-0 w-full py-5  px-5 flex md:justify-between items-center  bg-gradient-to-b from-black z-50 ">
       <nav className="flex w-full  justify-between ">
@@ -27,40 +35,52 @@ function Navbar(props) {
 
         <div className=" md:flex md:flex-1 gap-1 justify-center items-center  hidden">
           <div className=" cursor-pointer">
-            <button onClick={onOpen} className="rounded-lg md:text-sm hover:bg-primary whitespace-nowrap md:px-2  hover:font-bold hover:text-secondary  border-2 transition-all ease-in-out  border-primary text-white px-5 py-2 font-raleway">
+            <button
+              onClick={onOpen}
+              className="rounded-lg md:text-sm hover:bg-primary whitespace-nowrap md:px-2  hover:font-bold hover:text-secondary  border-2 transition-all ease-in-out  border-primary text-white px-5 py-2 font-raleway"
+            >
               Reservar Clase Muestra
             </button>
           </div>
 
           <div className="links lg:px-5 md:px-1 text-sm cursor-pointer text-white font-raleway hover:underline hover:decoration-primary hover:font-bold transition-all ease-in-out">
-            Eventos y Talleres
+            <a target="_blank" onClick={() => handleMenuItemClick("eventos")}>
+              Eventos y Talleres
+            </a>
           </div>
           <div className="links lg:px-5 md:px-1 text-sm cursor-pointer text-white font-raleway hover:underline hover:decoration-primary hover:font-bold transition-all ease-in-out">
-            Clases y Maestros
+            <a target="_blank" onClick={() => handleMenuItemClick("clases")}>
+              Clases y Maestros
+            </a>
           </div>
           <div className="links lg:px-5 md:px-1 text-sm cursor-pointer text-white font-raleway hover:underline hover:decoration-primary hover:font-bold transition-all ease-in-out">
-            Contacto
+            <a target="_blank" href="https://wa.me/4495484212">
+              Contacto
+            </a>
           </div>
         </div>
         <div className=" flex items-center lg:gap-7 gap-3 max-sm:justify-center max-sm:flex-1">
           <a
             id="whatsap"
             className="text-white text-[20px] lg:text-[28px] hover:p-3 hover:text-secondary hover:bg-primary rounded-full transition-all ease-in-out"
-            href=""
+            href="https://wa.me/4495484212"
+            target="_blank"
           >
             <IoLogoWhatsapp />
           </a>
           <a
             id="instagram"
             className="text-white text-[20px] lg:text-[28px] hover:p-3 hover:text-secondary hover:bg-primary rounded-full transition-all ease-in-out"
-            href=""
+            href="https://www.instagram.com/estudio_5678/"
+            target="_blank"
           >
             <RiInstagramFill />
           </a>
           <a
             id="facebook"
             className="text-white text-[18px] lg:text-[26px] hover:p-3 hover:text-secondary hover:bg-primary rounded-full transition-all ease-in-out"
-            href=""
+            href="https://www.facebook.com/people/5678-Estudio-de-danza/61550690288567/"
+            target="_blank"
           >
             <BsFacebook />
           </a>
@@ -78,17 +98,26 @@ function Navbar(props) {
               <FaTimes />
             </button>
           </div>
-          <button onClick={onOpen} className=" w-fit text-sm font-raleway text-white border-2 border-candy-corn-300 transition-colors ease-in-out hover:text-black hover:bg-candy-corn-300 rounded-md p-1 hover:font-bold">
+          <button
+            onClick={onOpen}
+            className=" w-fit text-sm font-raleway text-white border-2 border-candy-corn-300 transition-colors ease-in-out hover:text-black hover:bg-candy-corn-300 rounded-md p-1 hover:font-bold"
+          >
             Reservar Clase Muestra
           </button>
           <p className="cursor-pointer text-white font-raleway hover:underline hover:decoration-primary hover:font-bold transition-all ease-in-out">
-            Eventos y Talleres
+            <a target="_blank" onClick={() => handleMenuItemClick("eventos")}>
+              Eventos y Talleres
+            </a>
           </p>
           <p className="cursor-pointer text-white font-raleway hover:underline hover:decoration-primary hover:font-bold transition-all ease-in-out">
-            Clases y Maestros
+            <a target="_blank" onClick={() => handleMenuItemClick("clases")}>
+              Clases y Maestros
+            </a>
           </p>
           <p className="cursor-pointer text-white font-raleway hover:underline hover:decoration-primary hover:font-bold transition-all ease-in-out">
-            Contacto
+            <a target="_blank" href="https://wa.me/4495484212">
+              Contacto
+            </a>
           </p>
         </div>
         <div>

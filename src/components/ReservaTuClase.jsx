@@ -13,9 +13,11 @@ import {
   CardBody,
   Image,
   Chip,
+  Checkbox,
 } from "@nextui-org/react";
 import { useState } from "react";
 import { clasesInfo } from "../data/InfoClases";
+import { toast } from "react-toastify";
 
 const initialStateForm = {
   nombre: "",
@@ -27,6 +29,7 @@ const initialStateForm = {
 export const ReservaTuClase = (props) => {
   const { isOpen, onOpenChange } = props;
   const [claseSelected, setClaseSelected] = useState(null);
+  const [isCheck, setIsCheck] = useState(false);
   const [selectedDiaHora, setSelectedDiaHora] = useState({
     dia: null,
     hora: null,
@@ -43,35 +46,43 @@ export const ReservaTuClase = (props) => {
   };
 
   const handleOnSubmit = () => {
-    if (
-      formData.nombre &&
-      formData.apellidos &&
-      formData.correo &&
-      formData.telefono &&
-      claseSelected &&
-      selectedDiaHora.dia &&
-      selectedDiaHora.hora
-    ) {
-      const url = `https://wa.me/4495484212?text=${encodeURIComponent(
-        `Nombre: ${formData.nombre} ${formData.apellidos}\n` +
-          `Correo: ${formData.correo}\n` +
-          `Teléfono: ${formData.telefono}\n` +
-          `Clase: ${claseSelected.nombre}\n` +
-          `Día: ${selectedDiaHora.dia}\n` +
-          `Hora: ${selectedDiaHora.hora}`
-      )}`;
-      window.open(url, "_blank");
-      setFormData(initialStateForm);
-      setClaseSelected(null);
-      setSelectedDiaHora({ dia: null, hora: null });
-      onOpenChange();
+    if (isCheck) {
+      if (
+        formData.nombre &&
+        formData.apellidos &&
+        formData.correo &&
+        formData.telefono &&
+        claseSelected &&
+        selectedDiaHora.dia &&
+        selectedDiaHora.hora
+      ) {
+        const url = `https://wa.me/4495484212?text=${encodeURIComponent(
+          `Nombre: ${formData.nombre} ${formData.apellidos}\n` +
+            `Correo: ${formData.correo}\n` +
+            `Teléfono: ${formData.telefono}\n` +
+            `Clase: ${claseSelected.nombre}\n` +
+            `Día: ${selectedDiaHora.dia}\n` +
+            `Hora: ${selectedDiaHora.hora}`
+        )}`;
+        window.open(url, "_blank");
+        setFormData(initialStateForm);
+        setClaseSelected(null);
+        setSelectedDiaHora({ dia: null, hora: null });
+        onOpenChange();
+      } else {
+        alert("Faltan campos por llenar");
+      }
     } else {
-      alert("Faltan campos por llenar");
+      toast.error("Debes aceptar los términos y condiciones");
     }
   };
 
   const handleChipSelect = (dia, hora) => {
     setSelectedDiaHora({ dia, hora });
+  };
+
+  const handleOnCheck = ({ target: { checked } }) => {
+    setIsCheck(checked);
   };
 
   return (
@@ -154,17 +165,17 @@ export const ReservaTuClase = (props) => {
                   </CardHeader>
                   <CardBody>
                     <div className="flex flex-row">
-                      <div>
-                        <Image src={claseSelected?.img} width={250} />
+                      <div className="mr-5 mb-5">
+                        <Image src={claseSelected?.img} width={150} />
                       </div>
                       <div>
                         <span className="text-[100%] font-bold">Horarios</span>
                         {claseSelected?.horario.map((horario) => (
                           <div key={horario.turno}>
-                            <span className="text-[85%] font-bold">
+                            <span className="text-[85%] font-bold ">
                               {horario.turno}
                             </span>
-                            <div className="flex flex-row gap-2">
+                            <div className="flex flex-row flex-wrap gap-2 mt-2">
                               {horario.dias.map((dia) => (
                                 <Chip
                                   key={dia.dia + dia.hora}
@@ -197,6 +208,15 @@ export const ReservaTuClase = (props) => {
                     </div>
                   </CardBody>
                 </Card>
+              </div>
+              <div className="flex gap-3 mt-10">
+                <Checkbox onChange={handleOnCheck} checked={isCheck} />
+                <span className="text-[85%]">
+                  Doy fe de que me encuentro en condiciones de salud óptimas
+                  para realizar los ejercicios de clase, asimismo asumo la
+                  responsabilidad y riesgo de cualquier lesión derivada de las
+                  actividades mencionadas.
+                </span>
               </div>
             </div>
           </ModalBody>
