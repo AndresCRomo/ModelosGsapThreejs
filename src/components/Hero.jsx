@@ -14,7 +14,7 @@ const Hero = (props) => {
     <section className="w-full h-full flex flex-row justify-around items-center   ">
       <div
         id="hero"
-        className=" flex ml-10 items-center justify-center size-[130px] lg:size-[300px] md:size-[200px] z-10 opacity-0"
+        className=" flex ml-10 2xl:ml-[10%] items-center justify-center size-[130px] lg:size-[300px] md:size-[200px] 2xl:size-[600px] z-10 opacity-0"
       >
         <img src={logo} alt="logo" className="object-cover " />
       </div>
