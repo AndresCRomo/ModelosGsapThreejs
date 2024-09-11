@@ -22,10 +22,10 @@ const Home = () => {
           <div className="absolute top-[228px] md:top-[330px] lg:top-[450px] xl:top-[550px] w-full lg:h-[150px] h-[73px] bg-gradient-to-t from-black z-10"></div>
         </div>
         <div>
-          <SwipeCard/>
+          <SwipeCard id="section1"/>
         </div>
         <div>
-          <ContactUs />
+          <ContactUs id="section2"/>
         </div>
       </div>
       <footer className="mt-auto">

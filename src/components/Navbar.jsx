@@ -3,12 +3,20 @@ import { BsFacebook } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+
 function Navbar(props) {
   const { onOpen } = props;
   const [open, setOpen] = useState(false);
+
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
+  
+  const scrollToSection = (sectionRef) => {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const handleOpen = () => {
     setOpen(!open);
