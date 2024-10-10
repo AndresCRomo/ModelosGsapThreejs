@@ -6,7 +6,7 @@ import album1 from "../assets/images/clases/Chairdance.jpg";
 import album3 from "../assets/images/clases/DanzaContemporanea.jpg";
 import album4 from "../assets/images/clases/DanzasPolinesias.jpg";
 import album5 from "../assets/images/clases/EntrenamientoFuncional.jpg";
-import album6 from "../assets/images/clases/HipHop.jpg";
+import album6 from "../assets/images/clases/Movimiento_contempo.png";
 import album7 from "../assets/images/clases/Kpop.jpg";
 import album8 from "../assets/images/clases/KpopKids.jpg";
 import album9 from "../assets/images/clases/RitmosLatinos.jpg";
@@ -76,15 +76,15 @@ function SwipeCard() {
     {
       album: 5,
       img: album6,
-      title: "HIP HOP",
+      title: "Movimiento Contemporáneo",
       horarios: [
         {
-          dia: "Martes y Jueves",
-          hora: "12:30 pm a 1:30 pm",
+          dia: "Lunes",
+          hora: "8:00 pm a 9:00 pm",
         },
       ],
       gradient:
-        "linear-gradient(48deg, rgba(0,0,0,1) 0%, rgba(97,96,75,1) 53%, rgba(229,229,229,1) 99%)",
+        "linear-gradient(48deg, rgba(0,0,0,1) 0%, rgb(97, 21, 24) 53%, rgb(146, 65, 73) 99%)",
     },
     {
       album: 6,

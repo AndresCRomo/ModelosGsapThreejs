@@ -3,10 +3,11 @@ import reggaeton from "../assets/images/clases/reggaeton.svg";
 import entrenamientoFuncional from "../assets/images/clases/EntrenamientoFuncional.jpg";
 import kpop from "../assets/images/clases/Kpop.jpg";
 import kpopKids from "../assets/images/clases/KpopKids.jpg";
-import hiphop from "../assets/images/clases/HipHop.jpg";
+import mov_contempo from "../assets/images/clases/Movimiento_contempo.png";
 import ritmosLatinos from "../assets/images/clases/RitmosLatinos.jpg";
 import chairDance from "../assets/images/clases/ChairDance.jpg";
 import danzasPolinesias from "../assets/images/clases/DanzasPolinesias.jpg";
+import twerk from "../assets/images/clases/Twerk.jpg";
 
 export const clasesInfo = [
   {
@@ -129,20 +130,17 @@ export const clasesInfo = [
   },
   {
     id: 6,
-    nombre: "HIPHOP - RITMOS URBANOS",
-    descripcion: "HIPHOP - RITMOS URBANOS (+14 años)",
-    img: hiphop,
+    nombre: "Movimiento Contemporáneo",
+    descripcion: "Movimiento Contemporáneo (+14 años)",
+    img: mov_contempo,
     horario: [
       {
         turno: "Vespertino",
         dias: [
+         
           {
-            dia: "Martes",
-            hora: "12:30 a 13:30",
-          },
-          {
-            dia: "Jueves",
-            hora: "12:30 a 13:30",
+            dia: "Lunes",
+            hora: "8:00 pm a 9:00 pm",
           },
         ],
       },
@@ -207,6 +205,23 @@ export const clasesInfo = [
           {
             dia: "Sábados",
             hora: "10:00 a 12:00",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 10,
+    nombre: "TWERK",
+    descripcion: "TWERK (+16 años)",
+    img: twerk,
+    horario: [
+      {
+        turno: "Vespertino",
+        dias: [
+          {
+            dia: "Jueves",
+            hora: "6:00 pm a 7:00 pm",
           },
         ],
       },
