@@ -81,7 +81,7 @@ export const ContactUs = () => {
           </h1>
         </div>
         <section className="bg-[#0e0e0e] relative">
-          <div className="absolute inset-0 bg-[#0e0e0e]">
+          <div className="absolute inset-0 bg-[#0e0e0e] ">
             <iframe
               width="98%"
               height="100%"
@@ -95,7 +95,7 @@ export const ContactUs = () => {
             ></iframe>
           </div>
           <div className="container px-5 py-24 mx-auto flex">
-            <div className="lg:w-[26%] md:w-1/3 bg-[#ffffffeb] rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+            <div className="lg:block lg:w-[26%] md:w-1/3  bg-[#ffffffeb] rounded-lg p-8 hidden flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
             
             <div>
               <div className="w-full mx-auto rounded-lg overflow-hidden">

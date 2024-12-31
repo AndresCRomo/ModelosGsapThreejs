@@ -127,18 +127,19 @@ const Eventos = () => {
               autoplay={true}
             >
               <img
-                src={eventobachata}                alt="image 1"
-                className="h-full w-full object-cover"
+                src={eventobachata}
+                alt="image 1"
+                className=" object-scale-down h-full w-full object-cover"
               />
               <img
                 src={eventopunk}
                 alt="image 2"
-                className="h-full w-full object-cover"
+                className=" object-scale-down h-full w-full object-cover"
               />
               <img
                 src={eventomes}
                 alt="image 3"
-                className="h-full w-full object-cover"
+                className=" object-scale-down h-full w-full object-cover"
               />
             </Carousel>
           </div>
